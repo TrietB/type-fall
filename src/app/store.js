@@ -1,8 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import startViewSlice from '../features/startViewSlice'
+import gameViewSlice from '../features/gameViewSlice'
+import gameOverSlice from '../features/gameOverSlice'
+
+
+const rootRuducer = {
+  startView: startViewSlice,
+  gameView: gameViewSlice,
+  gameOverView: gameOverSlice
+}
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: rootRuducer
 });
+
+
